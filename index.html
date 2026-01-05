@@ -3,57 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harsh Dubey | IT Operations & Infrastructure Engineer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Harsh Dubey | IT Infrastructure & Operations Specialist</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2563eb;
-            --dark: #0f172a;
-            --light: #f8fafc;
-            --gray: #64748b;
+            --primary: #0078d4; /* Microsoft Blue */
+            --secondary: #2b3d4f;
+            --accent: #00f2fe;
+            --bg-dark: #0a0f18;
+            --card-bg: #161e2d;
+            --text-light: #f8fafc;
+            --text-gray: #94a3b8;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        
-        body { background-color: var(--light); color: var(--dark); line-height: 1.6; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; }
 
         /* Navigation */
-        nav { background: white; padding: 1rem 10%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; z-index: 1000; }
-        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); }
-        .nav-links a { margin-left: 2rem; text-decoration: none; color: var(--dark); font-weight: 500; transition: 0.3s; }
+        nav { background: rgba(10, 15, 24, 0.95); padding: 1.2rem 10%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); letter-spacing: -1px; }
+        .nav-links a { margin-left: 2rem; text-decoration: none; color: var(--text-gray); font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
         .nav-links a:hover { color: var(--primary); }
 
         /* Hero Section */
-        header { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 0 20px; }
-        header h1 { font-size: 3.5rem; margin-bottom: 1rem; }
-        header p { font-size: 1.2rem; color: #cbd5e1; max-width: 700px; margin-bottom: 2rem; }
-        .btn { background: var(--primary); color: white; padding: 0.8rem 2rem; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.3s; }
-        .btn:hover { background: #1d4ed8; }
+        header { height: 100vh; display: flex; align-items: center; justify-content: space-between; padding: 0 10%; background: radial-gradient(circle at 10% 20%, rgba(0, 120, 212, 0.1) 0%, transparent 40%); }
+        .hero-content { flex: 1; }
+        .hero-image-container { flex: 1; display: flex; justify-content: center; position: relative; }
+        
+        /* Your Photo Styling */
+        .profile-img { 
+            width: 350px; 
+            height: 350px; 
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; 
+            object-fit: cover; 
+            border: 5px solid var(--primary);
+            box-shadow: 0 0 50px rgba(0, 120, 212, 0.3);
+            animation: morph 8s ease-in-out infinite;
+        }
 
-        /* Sections */
-        section { padding: 5rem 10%; }
-        .section-title { text-align: center; margin-bottom: 3rem; font-size: 2.5rem; }
+        @keyframes morph {
+            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            50% { border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%; }
+            100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+        }
+
+        .hero-content h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 1rem; }
+        .hero-content h2 { color: var(--primary); font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 400; }
+        .hero-content p { color: var(--text-gray); max-width: 500px; margin-bottom: 2rem; font-size: 1.1rem; }
+
+        /* Experience Timeline */
+        section { padding: 6rem 10%; }
+        .section-title { font-size: 2.5rem; margin-bottom: 3rem; position: relative; display: inline-block; }
+        .section-title::after { content: ''; position: absolute; width: 50%; height: 4px; background: var(--primary); bottom: -10px; left: 0; }
+
+        .timeline { border-left: 2px solid var(--primary); padding-left: 2rem; }
+        .timeline-item { position: relative; margin-bottom: 3rem; }
+        .timeline-item::before { content: ''; position: absolute; width: 16px; height: 16px; background: var(--primary); border-radius: 50%; left: -2.6rem; top: 5px; }
+        .job-title { font-size: 1.4rem; font-weight: 700; color: var(--text-light); }
+        .company { color: var(--primary); font-weight: 600; display: block; margin-bottom: 0.5rem; }
+        .date { font-size: 0.85rem; color: var(--text-gray); text-transform: uppercase; letter-spacing: 1px; }
+        .job-desc { margin-top: 1rem; color: var(--text-gray); }
 
         /* Skills Grid */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-        .skill-card { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: center; border-top: 4px solid var(--primary); }
-        .skill-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; }
+        .skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .skill-group { background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
+        .skill-group:hover { transform: translateY(-5px); border-color: var(--primary); }
+        .skill-group h3 { color: var(--primary); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 10px; }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+        .tag { background: rgba(0, 120, 212, 0.1); color: var(--text-light); padding: 0.4rem 1rem; border-radius: 4px; font-size: 0.85rem; border: 1px solid rgba(0, 120, 212, 0.3); }
 
-        /* Project Cards */
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .project-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .project-info { padding: 1.5rem; }
-        .project-info h3 { margin-bottom: 0.5rem; }
-        .tag { background: #e2e8f0; padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.8rem; margin-right: 0.5rem; }
+        /* Contact Section */
+        .contact-box { background: linear-gradient(135deg, var(--primary), #003a66); padding: 4rem; border-radius: 20px; text-align: center; }
+        .btn { background: white; color: var(--primary); padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; margin-top: 2rem; }
+        .btn:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
-        /* Footer */
-        footer { background: var(--dark); color: white; text-align: center; padding: 3rem; }
-        .socials { margin-top: 1rem; }
-        .socials a { color: white; font-size: 1.5rem; margin: 0 1rem; text-decoration: none; }
+        footer { text-align: center; padding: 3rem; color: var(--text-gray); font-size: 0.9rem; }
 
-        @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            .nav-links { display: none; }
+        @media (max-width: 968px) {
+            header { flex-direction: column-reverse; text-align: center; height: auto; padding-top: 8rem; }
+            .hero-content h1 { font-size: 2.8rem; }
+            .profile-img { width: 250px; height: 250px; margin-bottom: 2rem; }
+            .hero-content p { margin: 0 auto 2rem; }
         }
     </style>
 </head>
@@ -63,96 +95,112 @@
         <div class="logo">HD.</div>
         <div class="nav-links">
             <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Technical Stack</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 
     <header>
-        <h1>Harsh Dubey</h1>
-        <p>IT Operations & Infrastructure Specialist. I build and manage scalable, high-availability environments using Cloud, Automation, and DevOps practices.</p>
-        <a href="mailto:your.email@example.com" class="btn">Download Resume</a>
+        <div class="hero-content">
+            <h2>IT Infrastructure & Operations</h2>
+            <h1>Harsh Dubey</h1>
+            <p>Experienced IT Business Coordinator with 5+ years of expertise in managing complex IT projects, streamlining infrastructure, and bridging the gap between technical teams and business goals.</p>
+            <div class="contact-info">
+                <p style="font-size: 0.9rem;"><i class="fas fa-map-marker-alt" style="color:var(--primary)"></i> New Delhi, India</p>
+                <p style="font-size: 0.9rem;"><i class="fas fa-envelope" style="color:var(--primary)"></i> harshdubey253@gmail.com</p>
+            </div>
+            <a href="#contact" class="btn">Get In Touch</a>
+        </div>
+        <div class="hero-image-container">
+            <!-- REPLACE 'harsh-photo.jpg' with your actual filename -->
+            <img src="harsh-photo.jpg" alt="Harsh Dubey" class="profile-img">
+        </div>
     </header>
 
-    <section id="skills">
-        <h2 class="section-title">Technical Expertise</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <i class="fas fa-cloud"></i>
-                <h3>Cloud Ops</h3>
-                <p>AWS (EC2, S3, RDS), Azure Administration, Hybrid Cloud setup.</p>
+    <section id="experience">
+        <h2 class="section-title">Professional Journey</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="date">May 2022 – Present</span>
+                <span class="job-title">IT Business Coordinator</span>
+                <span class="company">Randstad PVT LTD (Client: Siemens Energy)</span>
+                <p class="job-desc">Leading IT project coordination, ensuring 100% alignment with business objectives. I manage vendor relationships, negotiate service contracts, and drive process improvements that significantly enhance operational efficiency.</p>
             </div>
-            <div class="skill-card">
-                <i class="fas fa-server"></i>
-                <h3>Infrastructure</h3>
-                <p>Linux/Windows Administration, Virtualization (VMware, Hyper-V), Active Directory.</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-code"></i>
-                <h3>Automation</h3>
-                <p>Terraform, Ansible, Shell Scripting, Python for task automation.</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Network & Security</h3>
-                <p>Firewalls, VPN configuration, VLANs, Monitoring (Zabbix, Grafana).</p>
+            <div class="timeline-item">
+                <span class="date">Jun 2019 – May 2022</span>
+                <span class="job-title">Desktop Support Engineer</span>
+                <span class="company">N.R Techno Serve (Client: Siemens)</span>
+                <p class="job-desc">Provided Tier-2 technical support for enterprise desktop systems. Resolved complex hardware/software issues, managed remote assistance for end-users, and handled system configurations to meet global organizational standards.</p>
             </div>
         </div>
     </section>
 
-    <section id="projects" style="background: #f1f5f9;">
-        <h2 class="section-title">Key Projects</h2>
-        <div class="project-grid">
-            <!-- Project 1 -->
-            <div class="project-card">
-                <div class="project-info">
-                    <h3>Automated Cloud Deployment</h3>
-                    <p>Designed and implemented a fully automated AWS environment using Terraform and Ansible, reducing manual provisioning time by 90%.</p>
-                    <div style="margin-top: 1rem;">
-                        <span class="tag">Terraform</span><span class="tag">AWS</span><span class="tag">Linux</span>
-                    </div>
+    <section id="skills" style="background: rgba(255,255,255,0.02);">
+        <h2 class="section-title">Technical Arsenal</h2>
+        <div class="skills-container">
+            <div class="skill-group">
+                <h3><i class="fas fa-network-wired"></i> Systems & Network</h3>
+                <div class="skill-tags">
+                    <span class="tag">Windows Server</span>
+                    <span class="tag">Active Directory</span>
+                    <span class="tag">TCP/IP & DNS</span>
+                    <span class="tag">VPN Configuration</span>
+                    <span class="tag">Group Policy (GPO)</span>
+                    <span class="tag">Linux (Basic)</span>
                 </div>
             </div>
-            <!-- Project 2 -->
-            <div class="project-card">
-                <div class="project-info">
-                    <h3>Enterprise Monitoring System</h3>
-                    <p>Deployed a centralized monitoring solution using Prometheus and Grafana for 50+ virtual servers with automated Slack alerts.</p>
-                    <div style="margin-top: 1rem;">
-                        <span class="tag">Grafana</span><span class="tag">SNMP</span><span class="tag">Prometheus</span>
-                    </div>
+            <div class="skill-group">
+                <h3><i class="fas fa-cloud"></i> Cloud & MDM</h3>
+                <div class="skill-tags">
+                    <span class="tag">Microsoft 365</span>
+                    <span class="tag">Azure AD</span>
+                    <span class="tag">Intune MDM</span>
+                    <span class="tag">Ivanti</span>
+                    <span class="tag">Endpoint Security</span>
                 </div>
             </div>
-            <!-- Project 3 -->
-            <div class="project-card">
-                <div class="project-info">
-                    <h3>High-Availability Load Balancing</h3>
-                    <p>Configured Nginx Load Balancers and failover clusters to ensure 99.9% uptime for web applications during traffic spikes.</p>
-                    <div style="margin-top: 1rem;">
-                        <span class="tag">Nginx</span><span class="tag">Networking</span><span class="tag">HAProxy</span>
-                    </div>
+            <div class="skill-group">
+                <h3><i class="fas fa-tools"></i> IT Operations</h3>
+                <div class="skill-tags">
+                    <span class="tag">ServiceNow</span>
+                    <span class="tag">ITSM (Sapphire)</span>
+                    <span class="tag">PowerShell Automation</span>
+                    <span class="tag">SQL Database</span>
+                    <span class="tag">Stakeholder Management</span>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+            <div>
+                <h3 style="color:var(--primary)">Bachelor’s in Computer Application (BCA)</h3>
+                <p>SGV RU | Graduated Sep 2022</p>
+            </div>
+            <div>
+                <h3 style="color:var(--primary)">Diploma in Hardware & Networking</h3>
+                <p>Jetking | Completed Apr 2019</p>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
-            <p>I am currently open to new opportunities in IT Operations, Infrastructure Engineering, and Cloud Support.</p>
-            <br>
-            <a href="mailto:harsh.dubey@email.com" class="btn">Email Me</a>
+        <div class="contact-box">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Ready to optimize your infrastructure?</h2>
+            <p>Currently open to senior IT Operations and Infrastructure roles.</p>
+            <a href="mailto:harshdubey253@gmail.com" class="btn">Send an Email</a>
+            <div style="margin-top: 2rem; font-size: 1.5rem;">
+                <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
+                <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-github"></i></a>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Harsh Dubey | IT Infrastructure Portfolio</p>
-        <div class="socials">
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fas fa-envelope"></i></a>
-        </div>
+        <p>&copy; 2024 Harsh Dubey. Built for high-performance IT Operations.</p>
     </footer>
 
 </body>
