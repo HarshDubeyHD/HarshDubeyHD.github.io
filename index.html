@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Dubey | IT Operations & Infrastructure Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        body { background-color: var(--light); color: var(--dark); line-height: 1.6; }
+
+        /* Navigation */
+        nav { background: white; padding: 1rem 10%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); }
+        .nav-links a { margin-left: 2rem; text-decoration: none; color: var(--dark); font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Hero Section */
+        header { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 0 20px; }
+        header h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+        header p { font-size: 1.2rem; color: #cbd5e1; max-width: 700px; margin-bottom: 2rem; }
+        .btn { background: var(--primary); color: white; padding: 0.8rem 2rem; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .btn:hover { background: #1d4ed8; }
+
+        /* Sections */
+        section { padding: 5rem 10%; }
+        .section-title { text-align: center; margin-bottom: 3rem; font-size: 2.5rem; }
+
+        /* Skills Grid */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .skill-card { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: center; border-top: 4px solid var(--primary); }
+        .skill-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; }
+
+        /* Project Cards */
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .project-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .project-info { padding: 1.5rem; }
+        .project-info h3 { margin-bottom: 0.5rem; }
+        .tag { background: #e2e8f0; padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.8rem; margin-right: 0.5rem; }
+
+        /* Footer */
+        footer { background: var(--dark); color: white; text-align: center; padding: 3rem; }
+        .socials { margin-top: 1rem; }
+        .socials a { color: white; font-size: 1.5rem; margin: 0 1rem; text-decoration: none; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">HD.</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Harsh Dubey</h1>
+        <p>IT Operations & Infrastructure Specialist. I build and manage scalable, high-availability environments using Cloud, Automation, and DevOps practices.</p>
+        <a href="mailto:your.email@example.com" class="btn">Download Resume</a>
+    </header>
+
+    <section id="skills">
+        <h2 class="section-title">Technical Expertise</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fas fa-cloud"></i>
+                <h3>Cloud Ops</h3>
+                <p>AWS (EC2, S3, RDS), Azure Administration, Hybrid Cloud setup.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-server"></i>
+                <h3>Infrastructure</h3>
+                <p>Linux/Windows Administration, Virtualization (VMware, Hyper-V), Active Directory.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-code"></i>
+                <h3>Automation</h3>
+                <p>Terraform, Ansible, Shell Scripting, Python for task automation.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Network & Security</h3>
+                <p>Firewalls, VPN configuration, VLANs, Monitoring (Zabbix, Grafana).</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" style="background: #f1f5f9;">
+        <h2 class="section-title">Key Projects</h2>
+        <div class="project-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Automated Cloud Deployment</h3>
+                    <p>Designed and implemented a fully automated AWS environment using Terraform and Ansible, reducing manual provisioning time by 90%.</p>
+                    <div style="margin-top: 1rem;">
+                        <span class="tag">Terraform</span><span class="tag">AWS</span><span class="tag">Linux</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Enterprise Monitoring System</h3>
+                    <p>Deployed a centralized monitoring solution using Prometheus and Grafana for 50+ virtual servers with automated Slack alerts.</p>
+                    <div style="margin-top: 1rem;">
+                        <span class="tag">Grafana</span><span class="tag">SNMP</span><span class="tag">Prometheus</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>High-Availability Load Balancing</h3>
+                    <p>Configured Nginx Load Balancers and failover clusters to ensure 99.9% uptime for web applications during traffic spikes.</p>
+                    <div style="margin-top: 1rem;">
+                        <span class="tag">Nginx</span><span class="tag">Networking</span><span class="tag">HAProxy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+            <p>I am currently open to new opportunities in IT Operations, Infrastructure Engineering, and Cloud Support.</p>
+            <br>
+            <a href="mailto:harsh.dubey@email.com" class="btn">Email Me</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Harsh Dubey | IT Infrastructure Portfolio</p>
+        <div class="socials">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+    </footer>
+
+</body>
+</html>
